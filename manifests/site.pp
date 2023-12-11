@@ -3,4 +3,7 @@ node 'slave1.puppet' {
       ensure => latest,
       name   => httpd,
     }
+    service { 'httpd':
+      ensure => running,
+    }
 }
