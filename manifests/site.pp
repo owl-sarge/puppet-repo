@@ -14,8 +14,8 @@ node 'slave1.puppet','slave2.puppet' {
       name   => httpd,
     }
     file { '/var/www/html/index.html':
-      ensure => present,
-      source => file: /vagrant/files/index.html,
+      ensure => file,
+      source => "/vagrant/files/index.html",
     }
 }
     service { 'httpd':
