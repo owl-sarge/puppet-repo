@@ -14,8 +14,9 @@ node 'slave1.puppet','slave2.puppet' {
       name   => httpd,
     }
     file { '/var/www/html/index.html':
-      ensure => file,
-      source => https://github.com/Fenikks/devops-files-23.08/blob/master/05-puppet/files/index.html,
+      ensure => present,
+      source => /vagrant/files/index.html,
+    }
 }
     service { 'httpd':
       ensure => running,
