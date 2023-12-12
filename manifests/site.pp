@@ -39,6 +39,7 @@ node 'slave2.puppet' {
     name   => php,
   }
   service { 'php':
+    name => php-fpm,
     ensure => running,
   }
   service { 'httpd':
