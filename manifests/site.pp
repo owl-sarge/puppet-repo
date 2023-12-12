@@ -10,10 +10,10 @@ node 'slave1.puppet' {
     ensure => file,
     source => "/vagrant/files/index.html",
   }
-   file { '/vagrant/files/static/':
+   file { '/var/www/html/static/':
     ensure => directory,
   }
-  file { '/vagrant/files/static/index.html':
+  file { '/var/www/html/static/index.html':
     ensure => file,
     source => "/var/www/html/index.html",
   }
