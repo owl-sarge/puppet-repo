@@ -17,7 +17,7 @@ node 'slave1.puppet','slave2.puppet' {
       ensure => file,
       source => "/vagrant/files/index.html",
     }
-}
+
     service { 'httpd':
       ensure => running,
     }
