@@ -38,6 +38,9 @@ node 'slave2.puppet' {
     ensure => latest,
     name   => php,
   }
+  service { 'php':
+    ensure => running,
+  }
   service { 'httpd':
     ensure => running,
   }
