@@ -8,7 +8,7 @@ node 'master.puppet' {
   }
 }
 
-node 'slave1.puppet','slave2.puppet' {
+node 'slave1.puppet' {
   package { 'Apache':
     ensure => latest,
     name   => httpd,
@@ -17,8 +17,7 @@ node 'slave1.puppet','slave2.puppet' {
   service { 'httpd':
     ensure => running,
   }
-}
-node 'slave1.puppet' {
+
   file { '/var/www/html/index.html':
     ensure => file,
     source => "/vagrant/files/index.html",
@@ -26,6 +25,11 @@ node 'slave1.puppet' {
 }
 
 node 'slave2.puppet' {
+  package { 'Apache':
+    ensure => latest,
+    name   => httpd,
+  }
+  
   file { '/var/www/html/index.php':
     ensure => file,
     source => "/vagrant/files/index.php",
@@ -38,5 +42,9 @@ node 'slave2.puppet' {
   package { 'php':
     ensure => latest,
     name   => php,
+  }
+
+  service { 'httpd':
+    ensure => running,
   }
 }
