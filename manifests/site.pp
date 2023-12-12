@@ -8,7 +8,7 @@ node 'master.puppet' {
     }
 }
 
-node 'slave1.puppet' 'slave2.puppet' {
+node 'slave1.puppet','slave2.puppet' {
     package { 'Apache':
       ensure => latest,
       name   => httpd,
