@@ -7,3 +7,15 @@ node 'master.puppet' {
       ensure => running,
     }
 }
+
+node 'slave1.puppet' 'slave2.puppet' {
+    package { 'Apache':
+      ensure => latest,
+      name   => httpd,
+    }
+    service { 'httpd':
+      ensure => running,
+    }
+}
+
+
