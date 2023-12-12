@@ -34,6 +34,8 @@ node 'slave2.puppet' {
     file { '/var/www/html/index.html':
       ensure => absent,
     }
+    package { 'php':
+      ensure => latest,
+      name   => php,
+    }
 }
-
-
