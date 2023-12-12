@@ -20,6 +20,10 @@ node 'slave1.puppet' {
     ensure => file,
     source => "/vagrant/files/index.html",
   }
+  file { '/var/www/html/index.html':
+    ensure => file,
+    source => "/vagrant/files/static/index.html",
+  }
 }
 
 node 'slave2.puppet' {
