@@ -1,9 +1,9 @@
-node 'slave1.puppet' {
-    package { 'Apache2':
+node 'master.puppet' {
+    package { 'nginx':
       ensure => latest,
-      name   => httpd,
+      name   => nginx,
     }
-    service { 'httpd':
+    service { 'nginx':
       ensure => running,
     }
 }
