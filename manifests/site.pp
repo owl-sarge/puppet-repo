@@ -4,7 +4,7 @@ node 'master.puppet' {
     name   => nginx,
   }
 
-  file { '/etc/nginx/nginx.conf':
+  file { '/etc/nginx/conf.d/nginx.conf':
     ensure => file,
     source => "/vagrant/files/proxy.conf",
   }
