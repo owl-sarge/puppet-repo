@@ -8,6 +8,6 @@ file { '/var/www/html/index.html':
     ensure => file,
     source => "/vagrant/files/index.html",
 }
-service { 'httpd':
-  ensure => running,
-}
+#service { 'httpd':
+#  ensure => running,
+#}
