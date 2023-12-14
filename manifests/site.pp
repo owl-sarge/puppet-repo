@@ -12,5 +12,3 @@ service { 'nginx':
     ensure => running,
   }
 }
-
- 
