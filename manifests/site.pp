@@ -2,7 +2,7 @@ class { 'apache': }
 
 apache::vhost { 'localhost':
   ip       => '127.0.0.1',
-  port     => '8000'
+  port     => 8000,
   docroot  => '/var/www/first',
   ip_based => true,
 }
