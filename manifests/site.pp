@@ -1,14 +1,13 @@
-node 'slave1.puppet' {
-  package { 'Apache':
-    ensure => latest,
-    name   => httpd,
-  }
+class { 'apache': }
 
-  file { '/var/www/html/index.html':
+apache::listen { '80': }
+
+apache::listen { '8000': }
+
+file { '/var/www/html/index.html':
     ensure => file,
     source => "/vagrant/files/index.html",
-  }
-  service { 'httpd':
-    ensure => running,
-  }  
+}
+service { 'httpd':
+  ensure => running,
 }
