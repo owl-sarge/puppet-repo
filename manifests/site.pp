@@ -1,9 +1,9 @@
 class { 'apache': }
 
-apache::vhost { 'localhost':
-  ip       => '127.0.0.1',
-  port     => 8000,
-  docroot  => '/var/www/html',
+apache::vhost { 'example.com':
+  ip      => '127.0.0.1',
+  port    => 80,
+  docroot => '/var/www/html',
 }
 
 file { '/var/www/html/index.html':
